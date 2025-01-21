@@ -21,7 +21,7 @@ namespace FirstC_.Controllers;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpGet("/api/todo/{id}")]
@@ -38,7 +38,7 @@ namespace FirstC_.Controllers;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpPut("/api/todo/{id}")]
@@ -59,7 +59,7 @@ namespace FirstC_.Controllers;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpDelete("/api/todo/{id}")]
@@ -77,7 +77,7 @@ namespace FirstC_.Controllers;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
     }

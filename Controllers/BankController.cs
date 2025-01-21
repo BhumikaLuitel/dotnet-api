@@ -21,7 +21,7 @@ public class BankAccountController : ControllerBase
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpGet("/api/bankaccount")]
@@ -37,7 +37,7 @@ public class BankAccountController : ControllerBase
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpGet("/api/bankaccount/{id}")]
@@ -54,7 +54,7 @@ public class BankAccountController : ControllerBase
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpPut("/api/bankaccount/{id}")]
@@ -75,7 +75,7 @@ public class BankAccountController : ControllerBase
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpDelete("/api/bankaccount/{id}")]
@@ -87,14 +87,13 @@ public class BankAccountController : ControllerBase
                 if (account == null)
                 {
                     return NotFound();
-                }
-
+                } 
                 BankAccounts.Remove(account);
                 return Ok("Bank account deleted successfully");
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
     }

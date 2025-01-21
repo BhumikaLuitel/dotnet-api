@@ -20,7 +20,7 @@ namespace FirstC_.Controllers;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpGet("/api/student")]
@@ -36,7 +36,7 @@ namespace FirstC_.Controllers;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpGet("/api/student/{id}")]
@@ -53,7 +53,7 @@ namespace FirstC_.Controllers;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpPut("/api/student/{id}")]
@@ -73,7 +73,7 @@ namespace FirstC_.Controllers;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
         [HttpDelete("/api/student/{id}")]
@@ -92,7 +92,7 @@ namespace FirstC_.Controllers;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, $"Internal server error: {ex.Message}");
+                return BadRequest(ex.Message);
             }
         }
     }
